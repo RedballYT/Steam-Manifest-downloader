@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  padding: 40px;
+}
+
+.steam-logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00bcd4;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.info {
+  margin-top: 40px;
+  background-color: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
