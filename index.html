@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steam Manifest Downloader</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
   <div class="container">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Logo" class="steam-logo" />
-  <h1>Steam Manifest Downloader</h1>
-  <input type="text" id="gameId" placeholder="Enter Steam Game ID (e.g. 440)" />
-  <button onclick="downloadManifest()">Download ZIP</button>
-  <div id="status"></div>
- <div class="info">
-  <h2>ℹ️ Information</h2>
-  <ul>
-    <li>📁 ZIP files are downloaded from https://manifest.youngzm.com/ <a href="https://manifest.youngzm.com/" target="_blank">manifest.youngzm.com</a></li>
-    <li>📥 If available, the ZIP will be downloaded automatically</li>
-    <li>🛡️ No data is stored, tracked, or shared</li>
-    <li>📦 You must enter a valid Steam Game ID (e.g. <code>440</code> for TF2)</li>
-    <li>🌌 This tool runs entirely in your browser — no server, no redirect</li>
-  </ul>
-</div>
-    <script  src="./script.js"></script>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Logo" class="steam-logo" />
+    <h1>Steam Manifest Downloader</h1>
+    <input type="text" id="gameId" placeholder="Enter Steam Game ID (e.g. 440)" />
+    <button onclick="downloadManifest()">Download ZIP</button>
+    <div id="status"></div>
 
-  </body>
-  
+    <div class="info">
+      <h2>ℹ️ Information</h2>
+      <ul>
+        <li>📁 ZIP files are downloaded from <a href="https://manifest.youngzm.com/" target="_blank">manifest.youngzm.com</a></li>
+        <li>📥 If available, the ZIP will be downloaded automatically</li>
+        <li>🛡️ No data is stored, tracked, or shared</li>
+        <li>📦 You must enter a valid Steam Game ID (e.g. <code>440</code> for TF2)</li>
+        <li>🌌 This tool runs entirely in your browser — no server, no redirect</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
 </html>
+
