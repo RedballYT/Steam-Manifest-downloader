@@ -4,6 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Steam Manifest Downloader</title>
+
+  <!-- 🔍 SEO Tags -->
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Download Steam manifest ZIP files by AppID. Fast, private, browser-only tool for gamers and developers." />
+  <meta name="keywords" content="Steam, Manifest, AppID, ZIP, Downloader, GitHub Pages, Depot, Open Source, Steam Tools, Steam AppID ZIP" />
+  <meta name="author" content="Ravand" />
+
+  <!-- 🔗 Social Preview (optional) -->
+  <meta property="og:title" content="Steam Manifest Downloader" />
+  <meta property="og:description" content="Download Steam manifest ZIPs by AppID. No server, no tracking — just fast browser-based access." />
+  <meta property="og:url" content="https://redballyt.github.io/Steam-Manifest-downloader/" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" />
+
+  <!-- 🎨 Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -26,7 +41,45 @@
     </div>
   </div>
 
-  <script src="./script.js"></script>
+  <!-- ⚙️ Embedded Script -->
+  <script>
+    async function downloadManifest() {
+      const gameId = document.getElementById("gameId").value.trim();
+      const status = document.getElementById("status");
+
+      if (!gameId) {
+        status.innerText = "❗ Please enter a valid Steam Game ID.";
+        return;
+      }
+
+      const zipUrl = `https://manifest.youngzm.com/${gameId}.zip`;
+      status.innerText = "🔎 Checking ZIP availability...";
+
+      try {
+        const response = await fetch(zipUrl);
+
+        if (!response.ok) {
+          status.innerText = "❌ ZIP file not found or unavailable.";
+          return;
+        }
+
+        const blob = await response.blob();
+        const downloadUrl = URL.createObjectURL(blob);
+
+        const anchor = document.createElement("a");
+        anchor.href = downloadUrl;
+        anchor.download = `steam_manifest_${gameId}.zip`;
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
+        URL.revokeObjectURL(downloadUrl);
+
+        status.innerHTML = `✅ ZIP for AppID ${gameId} downloaded successfully.`;
+      } catch (err) {
+        status.innerText = "⚠️ Error while downloading.";
+        console.error(err);
+      }
+    }
+  </script>
 </body>
 </html>
-
